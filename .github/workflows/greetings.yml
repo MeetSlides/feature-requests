@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Welcome to MeetSlides! Thank you for your contribution. Check out https://meetslides.com/welcome"
+        pr-message: "Welcome to MeetSlides! Thank you for your contribution. Check out https://meetslides.com/welcome"
